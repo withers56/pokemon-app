@@ -11,7 +11,7 @@ function AllPokemon() {
     const [isLoading, setIsLoading] = useState(true)
     const [loadedPokemons, setLoadedPokemons] = useState([]);
     const [pokemondata, setPokemondata] = useState([]);
-    const arrayOfFeaturedPokemon = [25, 133, 143, 666, 150, 6]
+    const arrayOfFeaturedPokemon = [25, 133, 143, 666, 150, 1, 644, 23, 6, 3]
 
     useEffect(() => {
         let featuredPokemon = [];
