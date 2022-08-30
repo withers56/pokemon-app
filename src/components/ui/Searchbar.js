@@ -39,9 +39,9 @@ function Searchbar(props) {
     return (
 
         <div className='d-flex justify-content-between align-items-center mt-3 align-content-center' >
-            <h1 className='mx-5'>Pokemon</h1>
+            <h1 className='ms-2 ms-md-5 '>Pokemon</h1>
             <div className='d-flex align-items-center flex-column'>
-                    <input className={`mx-5 ${classes.search}`} type="text" id='pokemon-searchbar' placeholder='Search for pokemon..' ref={searchedNameRef} onKeyPress={SearchbarInputHandler}/>
+                    <input className={`me-2 me-md-5 ${classes.search}`} type="text" id='pokemon-searchbar' placeholder='Search for pokemon..' ref={searchedNameRef} onKeyPress={SearchbarInputHandler}/>
                     <div className="warning mx-5 text-danger"></div>
             </div>
         </div>
