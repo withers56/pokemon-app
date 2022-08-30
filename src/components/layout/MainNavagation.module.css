@@ -1,0 +1,24 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #d0d0d0;
+
+    align-items: center;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.tabDiv {
+    color: black;
+}
+
+ .tabDiv:hover{
+     color: #e76f51;
+     cursor: pointer;
+ }
