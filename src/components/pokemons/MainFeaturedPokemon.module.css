@@ -12,11 +12,21 @@
 }
 
 .navtab {
-    width: 50%;
+    width: 90%;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .pokemonHeader {
     font-size: 2em;
     font-weight: bold;
     color: #264653;
+}
+
+@media screen and (min-width:500px) {
+    .navtab {
+        width: 50%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 }
