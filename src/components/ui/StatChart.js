@@ -125,7 +125,7 @@ function StatChart(props) {
 
             <div className={`card mx-auto ${classes.width90} boxshadow`}>
                 <div className="card-body" id='chartContainer'>
-                    <canvas className='m-5' id="myChart"></canvas>
+                    <canvas className='' id="myChart"></canvas>
                 </div>
             </div>
     )

@@ -1,5 +1,6 @@
 import classes from './MainFeaturedPokemon.module.css'
 import {heightAndWeightConverter, test} from "../../functions/conversions/Conversions";
+import {Link} from "react-router-dom";
 
 
 function MainFeaturedPokemon(props) {
@@ -11,7 +12,10 @@ function MainFeaturedPokemon(props) {
             <div className=''>
                 <div className='my-4 text-center'>
                     <h2>Featured Pokemon</h2>
-                    <img className={classes.image} src={featuredPokemon.sprites.front_default} alt="main poke"/>
+                    <Link to={{
+                        pathname: '/searchedPokemon',
+                        state: featuredPokemon.id,
+                    }}><img className={classes.image} src={featuredPokemon.sprites.front_default} alt="main poke"/></Link>
                     <div className={classes.pokemonHeader}>{featuredPokemon.name} #{featuredPokemon.id}</div>
                 </div>
             </div>
