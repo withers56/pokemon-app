@@ -6,6 +6,10 @@
     align-items: center;
 }
 
+.navColor {
+    background-color: #d0d0d0;
+}
+
 .links {
     display: flex;
     align-items: center;

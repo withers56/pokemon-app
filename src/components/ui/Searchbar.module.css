@@ -1,5 +1,12 @@
 .search {
     border-radius: 5px;
     border: 1px solid black;
-    height: 30px;
+    height: 50px;
+    width: 90%;
+}
+
+@media screen and (min-width:500px) {
+    .search {
+        width: 30em;
+    }
 }

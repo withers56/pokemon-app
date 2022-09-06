@@ -16,8 +16,9 @@ function Searchbar(props) {
             const warning = document.querySelector('.warning');
             console.log(searchedName)
 
-            if (searchedName == null || searchedName.length < 1) {
+            if (searchedName == null || searchedName.length < 1 || searchedName === "") {
                 warning.innerHTML = 'Couldnt find pokemon with that name.'
+                return;
             }
 
             fetch(`https://pokeapi.co/api/v2/pokemon/${searchedName}`).then(resp => resp.json()).then(data => {
@@ -38,13 +39,11 @@ function Searchbar(props) {
     }
     return (
 
-        <div className='d-flex flex-wrap flex-md-nowrap justify-content-center align-items-center mt-3 align-content-center' >
-            {/*<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/269px-International_Pok%C3%A9mon_logo.svg.png?20150121202211" alt="" className="ms-md-3"/>*/}
             <div className='d-flex align-items-center flex-column mt-4'>
-                    <input className={`me-2 me-md-5 ${classes.search}`} type="text" id='pokemon-searchbar' placeholder='Search for pokemon..' ref={searchedNameRef} onKeyPress={SearchbarInputHandler}/>
-                    <div className="warning mx-5 text-danger"></div>
+                    <input className={`${classes.search}`} type="text" id='pokemon-searchbar' placeholder='Search for pokemon..'  ref={searchedNameRef} onKeyPress={SearchbarInputHandler}/>
+                    <div className="warning text-danger"></div>
             </div>
-        </div>
+
     )
 }
 
