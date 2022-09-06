@@ -1,6 +1,7 @@
 import classes from './MainFeaturedPokemon.module.css'
 import {heightAndWeightConverter, test} from "../../functions/conversions/Conversions";
 import {Link} from "react-router-dom";
+import Type from "../ui/Type";
 
 
 function MainFeaturedPokemon(props) {
@@ -42,7 +43,7 @@ function MainFeaturedPokemon(props) {
                                         <div className='col my-2'>Weight: {heightAndWeightConverter(featuredPokemon.weight)}kg</div>
                                     </div>
                                     <div className='row'>
-                                        <div className='col my-2'>Types: {featuredPokemon.types.map(type => <span key={type.type.name}>{type.type.name} </span>)}</div>
+                                        <div className='col my-2'>Types: {featuredPokemon.types.map(type => <Type type={type.type.name} key={type.type.name}/>)}</div>
                                         <div className='col my-2'>Abilities: {featuredPokemon.abilities.map(ability => <span key={ability.ability.name}>{ability.ability.name} </span>)}</div>
                                     </div>
                                 </div>

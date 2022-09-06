@@ -5,6 +5,7 @@ import {heightAndWeightConverter} from "../functions/conversions/Conversions";
 import StatChart from "../components/ui/StatChart";
 import FavoritesContext from "../store/favorites-context";
 import {useHistory} from "react-router-dom";
+import Type from "../components/ui/Type";
 
 function SearchedPokemon(props) {
     let id = props.location.state;
@@ -90,7 +91,7 @@ function SearchedPokemon(props) {
                             </div>
                             <div className="card-text">
                                 <div className='row'>
-                                    <div className='col my-2'>Types: {pokemondata[0].types.map(type => <span key={type.type.name}>{type.type.name} </span>)}</div>
+                                    <div className='col my-2'>Types: {pokemondata[0].types.map(type => <Type type={type.type.name} key={type.type.name}/>)}</div>
                                      <div className='col my-2'>Abilities: {pokemondata[0].abilities.map(ability => <span key={ability.ability.name}>{ability.ability.name} </span>)}</div>
                                 </div>
                             </div>

@@ -3,6 +3,7 @@ import Card from "../ui/Card";
 import {Link, useHistory} from "react-router-dom";
 import {useContext} from "react";
 import FavoritesContext from "../../store/favorites-context";
+import Type from "../ui/Type";
 
 function PokemonsItem(props) {
     const favoritesCtx = useContext(FavoritesContext);
@@ -53,7 +54,7 @@ function PokemonsItem(props) {
             {itemIsFavorite ? <span><i className="bi bi-star-fill text-yellow m-1" onClick={toggleMeetupStatusHandler}></i></span> : <span><i className="bi bi-star-fill hover-opacity m-1" onClick={toggleMeetupStatusHandler}></i></span>}
             <img src={props.sprites.front_default} alt="" className='card-img-top border-bottom border-dark'/>
             <div className="card-body">
-                <div className='d-flex justify-content-center'>{props.types.map(type => <span className='mx-2' key={props.id + type.type.name}>{type.type.name}</span>)}</div>
+                <div className='d-flex justify-content-center'>{props.types.map(type => <Type type={type.type.name} key={type.type.name}/>)}</div>
                 <h5 className="card-title text-center">{props.name}</h5>
                 <div className="card-text text-center">Height: {heightAndWeightConverter(props.height)}m</div>
                 <div className="card-text text-center">Weight: {heightAndWeightConverter(props.weight)}kgs</div>
