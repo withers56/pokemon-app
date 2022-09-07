@@ -14,6 +14,7 @@ function AllPokemon() {
     const arrayOfFeaturedPokemon = [25, 133, 143, 666, 150, 1, 644, 23, 6, 3]
 
     useEffect(() => {
+        setIsLoading(true);
         let featuredPokemon = [];
 
         if (localStorage.getItem('featuredPokemon') == null) {
@@ -32,42 +33,46 @@ function AllPokemon() {
                             sprites: data.sprites,
                             types: data.types,
                             stats: data.stats,
-                            abilities: data.abilities
-
+                            abilities: data.abilities,
+                            evoURL: data.species.url
                         }
                         featuredPokemon.push(addedPokemon)
                         window.localStorage.setItem('featuredPokemon', JSON.stringify(featuredPokemon))
 
                     })
-            )).then(() => setPokemondata(featuredPokemon))
+            )).then(() => {
+                setIsLoading(false);
+                setPokemondata(featuredPokemon)
+            })
         }
         else {
             console.log('inside localstorage grab')
             setPokemondata(JSON.parse(window.localStorage.getItem('featuredPokemon')))
+            setIsLoading(false);
         }
     },[])
 
 
 
-    useEffect(() => {
-        setIsLoading(true);
-        fetch('https://pokeapi.co/api/v2/pokemon/').then(function (resp){
-            return resp.json();
-        }).then(function (data){
-            const pokemons = [];
-
-            for (const pokemon of data.results) {
-                const pokemonToAdd = {
-                    name: pokemon.name,
-                    url: pokemon.url
-                }
-                pokemons.push(pokemonToAdd)
-            }
-
-            setIsLoading(false);
-            setLoadedPokemons(pokemons)
-        });
-    }, [])
+    // useEffect(() => {
+    //     setIsLoading(true);
+    //     fetch('https://pokeapi.co/api/v2/pokemon/').then(function (resp){
+    //         return resp.json();
+    //     }).then(function (data){
+    //         const pokemons = [];
+    //
+    //         for (const pokemon of data.results) {
+    //             const pokemonToAdd = {
+    //                 name: pokemon.name,
+    //                 url: pokemon.url
+    //             }
+    //             pokemons.push(pokemonToAdd)
+    //         }
+    //
+    //         setIsLoading(false);
+    //         setLoadedPokemons(pokemons)
+    //     });
+    // }, [])
 
     if (isLoading) {
         return (

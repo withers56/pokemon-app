@@ -6,6 +6,7 @@ import StatChart from "../components/ui/StatChart";
 import FavoritesContext from "../store/favorites-context";
 import {useHistory} from "react-router-dom";
 import Type from "../components/ui/Type";
+import EvolutionTab from "../components/ui/EvolutionTab";
 
 function SearchedPokemon(props) {
     let id = props.location.state;
@@ -61,6 +62,8 @@ function SearchedPokemon(props) {
     }
 
 
+
+
     return (
         <div>
             <div className='row mb-3'>
@@ -94,6 +97,9 @@ function SearchedPokemon(props) {
                                     <div className='col my-2'>Types: {pokemondata[0].types.map(type => <Type type={type.type.name} key={type.type.name}/>)}</div>
                                      <div className='col my-2'>Abilities: {pokemondata[0].abilities.map(ability => <span key={ability.ability.name}>{ability.ability.name} </span>)}</div>
                                 </div>
+                            </div>
+                            <div className="card-text">
+                                <EvolutionTab url={pokemondata[0].species.url} />
                             </div>
                         </div>
                     </div>
