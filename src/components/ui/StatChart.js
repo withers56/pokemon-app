@@ -76,7 +76,7 @@ function StatChart(props) {
         let chartElement = document.getElementById('myChart');
         var xValues = ["Hp", "Attack", "Defense", "Special-Attack", "Special-Defense", 'Speed'];
         var yValues = [];
-        var barColors = ['#5148FF'];
+        var barColors = ['#363b81', '#fbd743', '#ff1f1f', '#5db9ff', '#b3a125', '#cc0000'];
 
         props.pokemonStats.map(stat => yValues.push(stat.base_stat))
 
@@ -94,7 +94,7 @@ function StatChart(props) {
                 ]
             },
             options: {
-
+                maintainAspectRatio: false,
                 plugins: {
                     title: {
                         display: true,
@@ -126,7 +126,7 @@ function StatChart(props) {
 
     return (
 
-            <div className={`card mx-auto ${classes.width90} boxshadow`}>
+            <div className={`card mx-auto ${classes.width90} ${classes.chartHeight} boxshadow`}>
                 <div className="card-body" id='chartContainer'>
                     <canvas className='' id="myChart"></canvas>
                 </div>

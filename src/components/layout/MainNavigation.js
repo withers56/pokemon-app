@@ -5,9 +5,9 @@ import {useContext} from "react";
 function MainNavagation() {
 
     return (
-        <nav className={`navbar navbar-expand-lg navbar-light bg"}"navbar navbar-expand-lg navbar-light bg ${classes.navColor}`}>
+        <nav className={`navbar navbar-expand-lg navbar-light bg"}"navbar navbar-expand-lg navbar-light bg ${classes.navColor} noPadding`}>
             <div className="container-fluid">
-                <Link to='/' className={`m-1`}><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/269px-International_Pok%C3%A9mon_logo.svg.png?20150121202211" alt="" className="ms-md-3"/></Link>
+                <Link to='/' className={`m-1`}><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/269px-International_Pok%C3%A9mon_logo.svg.png?20150121202211" alt="" className="ms-md-3 width50"/></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

@@ -87,7 +87,7 @@ function SearchedPokemon(props) {
                     </div>
                 </div>
                 <div className="col-12 col-md-7">
-                    <div className={`card mx-auto my-5 ${classes.width80} boxshadow`}>
+                    <div className={`card mx-auto my-5 ${classes.setWidth} boxshadow`}>
                         <div className="card-body">
                             {itemIsFavorite ? <span><i className="bi bi-star-fill text-yellow m-1" onClick={toggleMeetupStatusHandler}></i></span> : <span><i className="bi bi-star-fill hover-opacity m-1" onClick={toggleMeetupStatusHandler}></i></span>}
                             <h5 className="card-title">Info</h5>
@@ -112,7 +112,7 @@ function SearchedPokemon(props) {
             </div>
             <div className='row'>
                 <div className="col-12 col-md-12">
-                    {/*<GoogleStatChart />*/}
+                    <StatChart pokemonStats={pokemondata[0].stats} />
                 </div>
             </div>
         </div>

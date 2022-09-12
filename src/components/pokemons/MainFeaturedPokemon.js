@@ -17,7 +17,7 @@ function MainFeaturedPokemon(props) {
                     <Link to={{
                         pathname: '/searchedPokemon',
                         state: featuredPokemon.id,
-                    }}><img className={classes.image} src={featuredPokemon.sprites.front_default} alt="main poke"/></Link>
+                    }}><img className={`${classes.image} hover-opacity`} src={featuredPokemon.sprites.front_default} alt="main poke"/></Link>
                     <div className={classes.pokemonHeader}>{featuredPokemon.name} #{featuredPokemon.id}</div>
                 </div>
             </div>
