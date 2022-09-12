@@ -48,20 +48,29 @@ function EvolutionTab(props) {
         return urlArray[urlArray.length - 2]
     }
 
+    function evolutionsDisplay(evolutionsArray) {
+        console.log(evolutionsArray)
+    }
+
+    function isLastElement(array, i) {
+        return i === array.length - 1;
+    }
+
 
 
 
 
     return (
-        <div className="d-flex justify-content-between">
-            {evolutionNames.map(evo =>
-                <Link to={{
-                    pathname: '/searchedPokemon',
-                    state: evo.id,
-                }}><span key={evo.id}>{evo.name}</span></Link>
-
-            )}
+        <div>
+            <h3>Evolutions:</h3>
+            <div className="d-flex justify-content-between">
+                {evolutionNames.map((evo, i) =>
+                    isLastElement(evolutionNames, i) ? <span key={evo.id}>{evo.name}</span> : <span key={evo.id}>{evo.name}
+                          <i className="bi bi-arrow-right ms-2"></i></span>
+                )}
+            </div>
         </div>
+
     )
 }
 
