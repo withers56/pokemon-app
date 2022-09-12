@@ -7,9 +7,11 @@ import FavoritesContext from "../store/favorites-context";
 import {useHistory} from "react-router-dom";
 import Type from "../components/ui/Type";
 import EvolutionTab from "../components/ui/EvolutionTab";
+import GoogleStatChart from "../components/ui/GoogleStatChart";
 
 function SearchedPokemon(props) {
-    let id = props.location.state;
+    console.log(props)
+    const [id, setId] = useState(props.location.state)
     const [isLoading, setIsLoading] = useState(true)
     const [pokemondata, setPokemondata] = useState([]);
 
@@ -61,6 +63,9 @@ function SearchedPokemon(props) {
         })
     }
 
+    function setIdStateHandler(id) {
+        setId(id);
+    }
 
 
 
@@ -99,7 +104,7 @@ function SearchedPokemon(props) {
                                 </div>
                             </div>
                             <div className="card-text">
-                                <EvolutionTab url={pokemondata[0].species.url} />
+                                <EvolutionTab changeId={setIdStateHandler} url={pokemondata[0].species.url} />
                             </div>
                         </div>
                     </div>
@@ -107,7 +112,7 @@ function SearchedPokemon(props) {
             </div>
             <div className='row'>
                 <div className="col-12 col-md-12">
-                    <StatChart pokemonStats={pokemondata[0].stats}/>
+                    {/*<GoogleStatChart />*/}
                 </div>
             </div>
         </div>

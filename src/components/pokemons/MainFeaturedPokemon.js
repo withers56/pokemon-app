@@ -2,6 +2,7 @@ import classes from './MainFeaturedPokemon.module.css'
 import {heightAndWeightConverter, test} from "../../functions/conversions/Conversions";
 import {Link} from "react-router-dom";
 import Type from "../ui/Type";
+import EvolutionTab from "../ui/EvolutionTab";
 
 
 function MainFeaturedPokemon(props) {
@@ -45,6 +46,11 @@ function MainFeaturedPokemon(props) {
                                     <div className='row'>
                                         <div className='col my-2'>Types: {featuredPokemon.types.map(type => <Type type={type.type.name} key={type.type.name}/>)}</div>
                                         <div className='col my-2'>Abilities: {featuredPokemon.abilities.map(ability => <span key={ability.ability.name}>{ability.ability.name} </span>)}</div>
+                                    </div>
+                                    <div className="row ">
+                                        <div className="col mx-5 my-2">
+                                            <EvolutionTab url={featuredPokemon.evoURL} />
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"

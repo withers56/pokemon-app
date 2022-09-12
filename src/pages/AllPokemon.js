@@ -6,6 +6,7 @@ import MainFeaturedPokemon from "../components/pokemons/MainFeaturedPokemon";
 import AnimationAcrossScreen from "../components/ui/AnimationAcrossScreen";
 import {useHistory} from "react-router-dom";
 import Searchbar from "../components/ui/Searchbar";
+import {Chart} from "react-google-charts";
 
 function AllPokemon() {
     const [isLoading, setIsLoading] = useState(true)

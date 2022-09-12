@@ -50,10 +50,16 @@ function EvolutionTab(props) {
 
 
 
+
+
     return (
         <div className="d-flex justify-content-between">
             {evolutionNames.map(evo =>
-                <span key={evo.id}>{evo.name}</span>
+                <Link to={{
+                    pathname: '/searchedPokemon',
+                    state: evo.id,
+                }}><span key={evo.id}>{evo.name}</span></Link>
+
             )}
         </div>
     )

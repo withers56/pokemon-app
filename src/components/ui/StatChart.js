@@ -27,18 +27,21 @@ import {
 import { Bar } from 'react-chartjs-2';
 import {useEffect} from "react";
 import classes from './StatChart.module.css'
+import {useState} from "react";
 
 
 
 
 
 function StatChart(props) {
-
+    const [count, setCount] = useState(1);
 
 
     useEffect(() => {
         chartInit()
+
     })
+
 
     function chartInit() {
 
