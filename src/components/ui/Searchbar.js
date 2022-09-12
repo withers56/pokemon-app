@@ -12,7 +12,7 @@ function Searchbar(props) {
     const history = useHistory();
     function SearchbarInputHandler(e) {
         if (e.key === 'Enter') {
-            const searchedName = searchedNameRef.current.value;
+            const searchedName = searchedNameRef.current.value.toLowerCase().trim();
             const warning = document.querySelector('.warning');
             console.log(searchedName)
 
