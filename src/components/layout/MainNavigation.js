@@ -14,10 +14,10 @@ function MainNavagation() {
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav">
-                        <li className="nav-item">
+                        <li className="nav-item py-2 py-lg-0">
                             <Link className={`py-3 px-2 text-decoration-none ${classes.tabDiv}`} to='/'>Pokemon Search</Link>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item py-2 py-lg-0">
                             <Link className={`py-3 px-2 text-decoration-none ${classes.tabDiv}`} to='/favorites'>Favorite Pokemon</Link>
                         </li>
                     </ul>
